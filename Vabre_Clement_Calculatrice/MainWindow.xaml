@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Vabre_Clement_Calculatrice"
         mc:Ignorable="d"
-        Title="Calculatrice" Height="550" Width="400" Background="Black">
+        Title="Calculatrice" Height="550" Width="600" Background="Black">
         
     <Grid>
         <!-- définiton du nombre de case en hauteur -->
@@ -14,16 +14,19 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
         <!-- définiton du nombre de case en largeur  -->
         <Grid.RowDefinitions>
+            
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            
         </Grid.RowDefinitions>
 
         <!-- Style des boutons centraux -->
@@ -35,6 +38,7 @@
                 <Setter Property="FontSize" Value="38"/>
                 <Setter Property="TextBlock.TextAlignment" Value="Center" />
                 <Style.Resources>
+                    <!-- Style pour les bords arrondis des boutons -->
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="10" />
                     </Style>
@@ -57,17 +61,21 @@
                 </Style.Resources>
             </Style>
 
+            <!-- Style pour la textbox -->
             <Style x:Key="BlackTextBoxStyle" TargetType="{x:Type TextBox}">
                 <Setter Property="Margin" Value="10" />
                 <Setter Property="Background" Value="Black" />
                 <Setter Property="Foreground" Value="White" />
+                <Setter Property="BorderBrush" Value="Black" />
+
+                <!-- Style pour la taille du texte -->
                 <Setter Property="FontSize" Value="30" />
             </Style>
 
 
         </Grid.Resources>
-
-        <TextBox Grid.Row="0" Grid.ColumnSpan="4" Name="TB_Display"  FontSize="30" Style="{StaticResource BlackTextBoxStyle}" BorderBrush="Black" IsReadOnly="True" >  </TextBox>
+        <!-- Création de tout les boutons -->
+        <TextBox Grid.Row="0" Grid.ColumnSpan="4" Name="TB_Display"  FontSize="30" Style="{StaticResource BlackTextBoxStyle}"   IsReadOnly="True" >  </TextBox>
         <Button Grid.Row="4" Grid.Column="0" Name="BTN_1" Content="1" Click="BTN_Click" />
         <Button Grid.Row="4" Grid.Column="1" Name="BTN_2" Content="2" Click="BTN_Click" />
         <Button Grid.Row="4" Grid.Column="2" Name="BTN_3" Content="3" Click="BTN_Click" />
@@ -87,8 +95,12 @@
         <Button Grid.Row="5" Grid.Column="3" Name="BTN_egal" Style="{StaticResource MyStyle}" Content="=" Click="BTN_egal_Click" />
         <Button Grid.Row="4" Grid.Column="3" Name="BTN_diviser" Style="{StaticResource MyStyle}"  Content="/" Click="BTN_Click_Operation" />
         <Button Grid.Row="1" Grid.Column="1" Name="BTN_carre" Style="{StaticResource MyStyle}"  Content="x²" Click="BTN_Click_Operation" />
-        <Button Grid.Row="1" Grid.Column="0" Name="BTN_pi" Style="{StaticResource MyStyle}"  Content="𝝅" Click="BTN_Click_Operation" />
-
-
+        <Button Grid.Row="1" Grid.Column="0" Name="BTN_pi" Style="{StaticResource MyStyle}"  Content="𝝅" Click="BTN_pi_Click" />
+        <Button Grid.Row="5" Grid.Column="4" Name="BTN_cos" Style="{StaticResource MyStyle}" Content="cos" Click="BTN_Click_Operation" />
+        <Button Grid.Row="4" Grid.Column="4" Name="BTN_sin" Style="{StaticResource MyStyle}" Content="sin" Click="BTN_Click_Operation" />
+        <Button Grid.Row="3" Grid.Column="4" Name="BTN_tan" Style="{StaticResource MyStyle}" Content="tan" Click="BTN_Click_Operation" />
+        <Button Grid.Row="2" Grid.Column="4" Name="BTN_exp" Style="{StaticResource MyStyle}" Content="exp" Click="BTN_Click_Operation" />
+        <Button Grid.Row="1" Grid.Column="4" Name="BTN_ln" Style="{StaticResource MyStyle}" Content="ln" Click="BTN_Click_Operation" />
+        
     </Grid>
 </Window>

@@ -53,13 +53,25 @@ namespace Vabre_Clement_Calculatrice
             TB_Display.Text = "0";
         }
 
+        // Fonction appelée pour pi
+        private void BTN_pi_Click(object sender, RoutedEventArgs e)
+        {
+            if (TB_Display.Text != "") N1 = double.Parse(TB_Display.Text);
+            operation = 'p';
+            TB_Display.Text = "0";
+        }
+
 
 
 
         // Fonction appelée lorsque l'utilisateur clique sur le bouton "CLR" (effacer)
         private void BTN_CLR_Click(object sender, RoutedEventArgs e)
         {
-            TB_Display.Clear();
+            N1 = 0;
+            N2 = 0;
+            operation = ' ';
+            result = 0;
+            TB_Display.Text = "0";
         }
 
         // Fonction appelée lorsque l'utilisateur clique sur le bouton "=" (égal)
@@ -70,38 +82,74 @@ namespace Vabre_Clement_Calculatrice
             // Calcule différentes opérations en fonction de l'opération choisie
                   switch (operation)
                 {
+                //operation +
                     case '+':
                         result = N1 + N2;
                         TB_Display.Text = result.ToString();
                         break;
 
+                    //racine
                     case '√':
                         double sqrtResult = Math.Sqrt(N1);
                         TB_Display.Text = sqrtResult.ToString();
                         break;
 
+                    //moins
                     case '-':
                         result = N1 - N2;
                         TB_Display.Text = result.ToString();
                         break;
 
+                    //fois
                     case '*':
                         result = N1 * N2;
                         TB_Display.Text = result.ToString();
                         break;
 
+                    //carré
                     case 'x':
                     result = N1 * N1;
                     TB_Display.Text = result.ToString();
                          break;
 
+                    //pi
                     case 'p':
                     result = N1 * Math.PI;
                     TB_Display.Text = result.ToString();
                          break;
 
+                    //tan
+                    case 't':
+                    result = Math.Tan(N1);
+                    TB_Display.Text = result.ToString();
+                        break;
 
-                     case '/':
+                    //sin
+                    case 's':
+                    result = Math.Sin(N1);
+                    TB_Display.Text = result.ToString();
+                     break;
+
+                    //cos
+                    case 'c':
+                    result = Math.Cos(N1);
+                    TB_Display.Text = result.ToString();
+                     break;
+
+                    //exp
+                    case 'e':
+                    result = Math.Exp(N1);
+                    TB_Display.Text = result.ToString();
+                     break;
+
+                    //ln
+                    case 'l':
+                    result = Math.Log(N1);
+                    TB_Display.Text = result.ToString();
+                     break;
+
+
+                case '/':
                         if (N2 != 0)
                         {
                             result = N1 / N2;
