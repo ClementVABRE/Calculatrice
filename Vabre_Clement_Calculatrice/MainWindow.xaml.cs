@@ -1,4 +1,6 @@
-﻿using System;
+﻿//Clement VABRE CIEL1
+
+using System;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -11,7 +13,7 @@ namespace Vabre_Clement_Calculatrice
         double N2 = 0;
         char operation = ' ';
         double result = 0;
-
+        
         public MainWindow()
         {
             InitializeComponent();

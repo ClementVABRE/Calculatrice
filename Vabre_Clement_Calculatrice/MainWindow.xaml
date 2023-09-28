@@ -75,7 +75,7 @@
 
         </Grid.Resources>
         <!-- Création de tout les boutons -->
-        <TextBox Grid.Row="0" Grid.ColumnSpan="4" Name="TB_Display"  FontSize="30" Style="{StaticResource BlackTextBoxStyle}"   IsReadOnly="True" >  </TextBox>
+        <TextBox Grid.Row="0" Grid.ColumnSpan="5" Name="TB_Display"  FontSize="30" Style="{StaticResource BlackTextBoxStyle}"   IsReadOnly="True" >  </TextBox>
         <Button Grid.Row="4" Grid.Column="0" Name="BTN_1" Content="1" Click="BTN_Click" />
         <Button Grid.Row="4" Grid.Column="1" Name="BTN_2" Content="2" Click="BTN_Click" />
         <Button Grid.Row="4" Grid.Column="2" Name="BTN_3" Content="3" Click="BTN_Click" />
