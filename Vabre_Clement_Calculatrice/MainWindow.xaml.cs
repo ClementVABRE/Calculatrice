@@ -36,6 +36,7 @@ namespace Vabre_Clement_Calculatrice
         // Fonction appelée lorsque l'utilisateur clique sur un bouton numérique
         private void BTN_Click(object sender, RoutedEventArgs e)
         {
+           
             Button btn = sender as Button;
             String btnContent = btn.Content.ToString();
             display (btnContent);
@@ -46,6 +47,7 @@ namespace Vabre_Clement_Calculatrice
 
         private void BTN_Click_Operation(object sender, RoutedEventArgs e)
         {
+
             Button btn_ope = sender as Button;
             if (TB_Display.Text != "")
             {
@@ -79,8 +81,13 @@ namespace Vabre_Clement_Calculatrice
         // Fonction appelée lorsque l'utilisateur clique sur le bouton "=" (égal)
         private void BTN_egal_Click(object sender, RoutedEventArgs e)
         {
+            try { 
             N2 = double.Parse(TB_Display.Text);
-
+                }
+            catch 
+            {
+                MessageBox.Show("erreur veuillez entrer valeur valide");
+            }
             // Calcule différentes opérations en fonction de l'opération choisie
                   switch (operation)
                 {
